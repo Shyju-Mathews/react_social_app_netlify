@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Tesla",
+      "datetime": "July 25, 2023 3:55:24 PM",
+      "body": "Made a video about Tesla"
+    },
+    {
+      "id": 2,
+      "title": "Uber",
+      "datetime": "July 25, 2023 3:55:50 PM",
+      "body": "Made a video about Uber"
+    },
+    {
+      "id": 3,
+      "title": "Google",
+      "datetime": "July 25, 2023 3:56:03 PM",
+      "body": "Made a video about Google"
+    },
+    {
+      "id": 4,
+      "title": "Ola",
+      "datetime": "July 25, 2023 3:56:12 PM",
+      "body": "Made a video about Ola"
+    },
+    {
+      "id": 5,
+      "title": "Technology",
+      "datetime": "July 25, 2023 7:52:10 PM",
+      "body": "Technological world"
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;0,900;1,500;1,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+}
+
+body {
+  /* min-height: 100vh; */
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: white;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  /* text-align: center; */
+  height: 100vh;
+  width: 100%;
+  max-width: 800%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.5rem;
+  /* border: 1px solid #333;*/
+  /* box-shadow: 0px 0px 15px gray; */
+}
+
+.header, .footer {
+  width: 100%;
+  background-color: #66d8f5;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+/* .menu {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: black;
+} */
+
+/* .menuItem {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+.Header svg {
+  font-size: 2rem;
+}
+
+.footer {
+  padding: 0.75rem;
+  display: grid;
+  place-content: center;
+}
+
+.Nav {
+  width: 100%;
+  margin-top: 0%;
+  /* padding: 1rem; */
+  background-color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+
+.Nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.Nav li {
+  padding: 1rem;
+}
+
+.Nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Nav li:hover,
+.Nav li:focus {
+  /* padding: 1.46rem 1rem; */
+  padding: 1.46rem 1rem;
+}
+
+.Nav li:hover,
+.Nav li:focus,
+.Nav li:hover a,
+.Nav li:focus a {
+  background-color: #66d8f5;
+  color: black;
+  border-radius:  3rem 0 3rem 0 ;
+}
+
+
+
+.searchForm {
+  width: 100%;
+  /* padding: 1rem 0 0 0.75rem; */
+  padding: 1rem;
+  display: "flex";
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  /* background-color: red; */
+}
+
+.searchForm input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
+  width: 50%;
+  height: 48px;
+  position: relative;
+  left: 1rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.home, .newPost, .postPage, .about, .missing {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  /* margin-top: 3rem; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-y: auto;
+  background-color: #fff;
+  /* background-color: red; */
+}
+
+.post {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.home .post a {
+  text-decoration: none;
+}
+
+.home .post a,
+.home .post a:visited {
+  color: black;
+}
+
+.post:first-child {
+  margin-top: 0;
+}
+
+
+.post:last-child {
+  border-bottom: none;
+}
+
+.postDate {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.postBody {
+  margin: 1rem 0;
+}
+
+.newPostForm {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  /* border: 1px solid black; */
+}
+
+.newPostForm label {
+  margin-top: 1rem;
+  position: relative;
+  left: -450px;
+  top: 60px;
+}
+
+.newPostForm input[type='text'],
+.newPostForm textarea {
+  font-family: 'Open Sans', sans-serif;
+  width: 50%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+.newPostForm textarea {
+  height: 100px;
+}
+
+.newPostForm button {
+  margin-top: 1rem;
+  height: 48px;
+  width: 10rem;
+  min-height: 48px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.missing h2, .postPage h2,
+.missing p, .postPage p {
+  margin-bottom: 1rem;
+}
+
+.postPage .detailsPage {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 1rem;
+  /*bottom: 10rem; */
+  padding-bottom: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  /* left: 25%; */
+  gap: 1rem;
+  /* background-color: aquamarine; */
+}
+
+.postPage button {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
+
+.statusMsg {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 610px) {
+  html {
+    font-size: 1rem;
+  }
+}
