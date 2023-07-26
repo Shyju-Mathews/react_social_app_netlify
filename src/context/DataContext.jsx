@@ -2,38 +2,38 @@ import { createContext, useEffect, useState } from "react";
 import useWindowSize from "../hooks/useWindowSize";
 // import useAxiosFetch from "../hooks/useAxiosFetch";
 
-const postData = [
-    {
-      id: 1,
-      title: "Tesla",
-      datetime: "July 25, 2023 3:55:24 PM",
-      body: "Made a video about Tesla"
-    },
-    {
-      id: 2,
-      title: "Uber",
-      datetime: "July 25, 2023 3:55:24 PM",
-      body: "Made a video about Tesla"
-    },
-    {
-      id: 3,
-      title: "Google",
-      datetime: "July 25, 2023 3:55:24 PM",
-      body: "Made a video about Google"
-    },
-    {
-      id: 4,
-      title: "Ola",
-      datetime: "July 25, 2023 3:55:24 PM",
-      body: "Made a video about Ola"
-    },
-    {
-      id: 5,
-      title: "Technology",
-      datetime: "July 25, 2023 3:55:24 PM",
-      body: "Made a video about Technology"
-    }
-  ];
+// const postData = [
+//     {
+//       id: 1,
+//       title: "Tesla",
+//       datetime: "July 25, 2023 3:55:24 PM",
+//       body: "Made a video about Tesla"
+//     },
+//     {
+//       id: 2,
+//       title: "Uber",
+//       datetime: "July 25, 2023 3:55:24 PM",
+//       body: "Made a video about Tesla"
+//     },
+//     {
+//       id: 3,
+//       title: "Google",
+//       datetime: "July 25, 2023 3:55:24 PM",
+//       body: "Made a video about Google"
+//     },
+//     {
+//       id: 4,
+//       title: "Ola",
+//       datetime: "July 25, 2023 3:55:24 PM",
+//       body: "Made a video about Ola"
+//     },
+//     {
+//       id: 5,
+//       title: "Technology",
+//       datetime: "July 25, 2023 3:55:24 PM",
+//       body: "Made a video about Technology"
+//     }
+//   ];
 
 const DataContext = createContext({})
 
