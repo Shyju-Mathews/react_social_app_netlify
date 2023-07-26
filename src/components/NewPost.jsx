@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import api from "../api/post";
+// import api from "../api/post";
 import DataContext from "../context/DataContext";
 
 const NewPost = () => {
@@ -30,10 +30,10 @@ const NewPost = () => {
     const newPost = { id, title: postTitle, datetime, body: postBody };
     
     try {
-      const res = await api.post("/posts", newPost);
-      const allPosts = [...posts, res.data];
+      // const res = await api.post("/posts", newPost);
+      const allPosts = [...posts, newPost];
       setPosts(allPosts);
-      // localStorage.setItem("posts", JSON.stringify(allPosts));
+      localStorage.setItem("posts", JSON.stringify(allPosts));
       navigate("/");
       console.log("Post Added suuccessfully", allPosts);
     } catch (error) {
@@ -52,12 +52,13 @@ const NewPost = () => {
     const datetime = format(new Date(), "MMMM dd, yyyy pp");
     const updatePost = { id, title: editTitle, datetime, body: editBody };
     try {
-      const res = await api.patch(`posts/${id}`, updatePost);
+      // const res = await api.patch(`posts/${id}`, updatePost);
       const allPosts = posts.map((post) =>
-        post.id === id ? { ...res.data } : post
+        // post.id === id ? { ...res.data } : post
+        post.id === id ? { ...updatePost} : post
       );
       setPosts(allPosts);
-      // localStorage.setItem("posts", JSON.stringify(allPosts));
+      localStorage.setItem("posts", JSON.stringify(allPosts));
       navigate("/");
       console.log("Post updated succcessfully", allPosts);
     } catch (error) {
