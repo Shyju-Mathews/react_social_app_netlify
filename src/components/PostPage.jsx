@@ -42,10 +42,10 @@ const PostPage = () => {
         }
         <div style={{ width: "20%", justifyContent: "center", gap: "2rem", display: "flex"}}>
         {
-          post && <button><Link to={`/post/edit/${post.id}`} style={{color: "white", textDecoration: "none", padding: "0 0.9rem"}}>Edit</Link></button>
+          post && <button className='editButton'><Link to={`/post/edit/${post.id}`} style={{color: "white", textDecoration: "none", padding: "0 0.9rem"}}>Edit</Link></button>
         }
         {
-          post && <button onClick={() => handleDelete(post.id)}>Delete</button>
+          post && <button className='deleteButton' onClick={() => handleDelete(post.id)}>Delete</button>
         }
         </div>
       </article>
