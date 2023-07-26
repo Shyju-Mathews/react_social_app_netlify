@@ -1,6 +1,6 @@
 import React, { useContext } from 'react' 
 import { Link, useNavigate, useParams } from 'react-router-dom'
-// import api from "../api/post"
+import api from "../api/post"
 import DataContext from '../context/DataContext'
 
 const PostPage = () => {
@@ -14,10 +14,10 @@ const PostPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      // await api.delete(`/posts/${id}`)
+      await api.delete(`/posts/${id}`)
       const post = posts.filter((post) => post.id !== id);
       setPosts(post)
-    localStorage.setItem("posts", JSON.stringify(post));
+    // localStorage.setItem("posts", JSON.stringify(post));
     console.log("post deleted successfully", post);
     navigate('/');
     } catch (error) {

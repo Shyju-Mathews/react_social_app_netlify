@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-// import api from "../api/post";
+import api from "../api/post";
 import DataContext from "../context/DataContext";
 
 const NewPost = () => {
@@ -30,10 +30,10 @@ const NewPost = () => {
     const newPost = { id, title: postTitle, datetime, body: postBody };
     
     try {
-      // const res = await api.post("/posts", newPost);
-      const allPosts = [...posts, newPost];
+      const res = await api.post("/posts", newPost);
+      const allPosts = [...posts, res.data];
       setPosts(allPosts);
-      localStorage.setItem("posts", JSON.stringify(allPosts));
+      // localStorage.setItem("posts", JSON.stringify(allPosts));
       navigate("/");
       console.log("Post Added suuccessfully", allPosts);
     } catch (error) {
@@ -52,13 +52,12 @@ const NewPost = () => {
     const datetime = format(new Date(), "MMMM dd, yyyy pp");
     const updatePost = { id, title: editTitle, datetime, body: editBody };
     try {
-      // const res = await api.patch(`posts/${id}`, updatePost);
+      const res = await api.patch(`posts/${id}`, updatePost);
       const allPosts = posts.map((post) =>
-        // post.id === id ? { ...res.data } : post
-        post.id === id ? { ...updatePost} : post
+        post.id === id ? { ...res.data } : post
       );
       setPosts(allPosts);
-      localStorage.setItem("posts", JSON.stringify(allPosts));
+      // localStorage.setItem("posts", JSON.stringify(allPosts));
       navigate("/");
       console.log("Post updated succcessfully", allPosts);
     } catch (error) {
@@ -70,7 +69,6 @@ const NewPost = () => {
     <main className="newPost">
       <h1 style={{ textAlign: "center" }}>
         {post ? "Update Post" : "Add Post"}
-        {/* Add Post */}
       </h1>
 
      {
@@ -78,7 +76,6 @@ const NewPost = () => {
         <form
         action=""
         className="newPostForm"
-        // onSubmit={() => handleUpdatePost(post.id)}
         onSubmit={(e) => e.preventDefault()}
       >
         <label htmlFor="editTitle">Title :</label>
@@ -98,7 +95,6 @@ const NewPost = () => {
           onChange={(e) => setEditBody(e.target.value)}
         ></textarea>
         <button type="submit" onClick={() => handleUpdatePost(post.id)}> 
-          {/* {post ? "Update" : "Add"} */}
           Update
         </button>
       </form>) : (
@@ -106,7 +102,6 @@ const NewPost = () => {
       <form
       action=""
       className="newPostForm"
-      // onSubmit={() => handleUpdatePost(post.id)}
       onSubmit={handleAddPost}
     >
       <label htmlFor="postTitle">Title :</label>
@@ -126,7 +121,6 @@ const NewPost = () => {
         onChange={(e) => setPostBody(e.target.value)}
       ></textarea>
       <button type="submit">
-        {/* {post ? "Update" : "Add"} */}
         Add
       </button>
     </form>)
